@@ -9,7 +9,9 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
     
-    playerSelection = playerSelection.toLower();
+    playerSelection = playerSelection.toLowerCase();
+    console.log("Player: " + playerSelection);
+    console.log("Computer: " + computerSelection);
 
     if (playerSelection === computerSelection) {
         return "Tied";
@@ -19,7 +21,7 @@ function playRound(playerSelection, computerSelection) {
         if (computerSelection === "paper") {
             return "You Lose! Paper beats Rock";
         } else if (computerSelection === "scissors") {
-            return "You win! Scissors beats Rock";
+            return "You win! Rock beats Scissors";
         } else {
             return "Error";
         }
@@ -42,5 +44,13 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-console.log(getComputerChoice());
+function game() {
+    for (let i = 1; i < 6; i++) {
+        let playerSelection = prompt(("Round " + i + "!"));
+        let result = (playRound(playerSelection, getComputerChoice()));
+        console.log(result);
+        
+    }
+}
+
 
