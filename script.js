@@ -44,13 +44,30 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
+const btnRock = document.querySelector('#rock');
+const btnPaper = document.querySelector('#paper');
+const btnScissors = document.querySelector('#scissors');
+
+btnRock.addEventListener('click', () => {
+    playRound('rock', getComputerChoice());
+})
+
+btnPaper.addEventListener('click', () => {
+    playRound('paper', getComputerChoice());
+})
+
+btnScissors.addEventListener('click', () => {
+    playRound('scissors', getComputerChoice());
+})
+
+/* function game() {
     for (let i = 1; i < 6; i++) {
         let playerSelection = prompt(("Round " + i + "!"));
         let result = (playRound(playerSelection, getComputerChoice()));
         console.log(result);
-        
     }
-}
+} */
+
+
 
 
